@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boyi Zhang | English to Chinese Translator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('背景.jfif');
+      background-size: cover;
+      background-position: center;
+      color: #333;
+    }
+
+    header {
+      background: rgba(0, 123, 255, 0.8);
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+      border: 2px solid #fff;
+    }
+
+    .title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .language-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      color: #007bff;
+      border: 1px solid #007bff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    section {
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.8);
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    .cn {
+      display: none;
+      color: #555;
+      margin-top: 5px;
+      font-size: 0.95em;
+    }
+
+    .expandable {
+      cursor: pointer;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .expanded-content {
+      display: none;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="language-toggle" onclick="toggleLanguage()">中/En</div>
+
+  <header>
+    <img src="A.jpg" alt="Profile Photo" class="avatar" />
+    <div class="title-box">
+      <h1>Boyi Zhang</h1>
+      <p>English to Chinese Translator</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Boyi Zhang, a skilled English to Chinese translator based in Dublin.
+      <span class="cn">你好！我是张博一，现居都柏林，擅长将英文准确流畅地翻译为中文。</span>
+    </p>
+    <p class="expandable" onclick="toggleExpandable()">Click to expand my professional experience in web novel platforms...</p>
+    <div class="expanded-content">
+      <ul>
+        <li>1. 阅读集团</li>
+        <li>2. 全名写作</li>
+        <li>3. Webnovel</li>
+        <li>4. Dreame</li>
+        <li>5. 起点中文网</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Services</h2>
+    <ul>
+      <li>Professional English to Mandarin translations
+        <div class="cn">专业的英译中服务</div>
+      </li>
+      <li>Business and academic localization
+        <div class="cn">商务与学术本地化翻译</div>
+      </li>
+      <li>Accurate, culturally relevant language
+        <div class="cn">注重语境与文化的准确表达</div>
+      </li>
+      <li>汉语教学可视化教案
+        <div class="cn">Visual Teaching Plan for Chinese Language Learning</div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      📧 Email: <a href="mailto:zboyiifp21@gmail.com">zboyiifp21@gmail.com</a><br/>
+      🔗 Fiverr: <a href="https://fiverr.com/boyizhang" target="_blank">Visit my Fiverr</a>
+      <span class="cn"><br/>（如需中文沟通，请随时联系）</span>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Boyi Zhang
+  </footer>
+
+  <script>
+    function toggleLanguage() {
+      const chineseTexts = document.querySelectorAll(".cn");
+      chineseTexts.forEach(el => {
+        el.style.display = (el.style.display === "inline" || el.style.display === "block") ? "none" : "block";
+      });
+    }
+
+    function toggleExpandable() {
+      const content = document.querySelector(".expanded-content");
+      content.style.display = (content.style.display === "block") ? "none" : "block";
+    }
+
+    // 初始访问弹窗
+    window.onload = function() {
+      setTimeout(() => {
+        if (confirm("Would you like to view the website in bilingual (English & Chinese) mode?")) {
+          toggleLanguage();
+        }
+      }, 500);
+    };
+  </script>
+</body>
+</html>
